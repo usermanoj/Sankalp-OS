@@ -1,0 +1,27 @@
+Sadhna - To accomplish - Goal oriented methodical discipline with spiritual insights
+
+Team Name: Legacy Loop
+
+project Description:
+We want to build Sadhana OS, a personal and family habit operating system. It will help individuals track and improve habits across spiritual practice, yoga, exercise, professional growth, family, personal discipline, social commitments, and wellbeing.
+
+Unlike simple streak-based habit trackers, it will support customizable categories and sub-categories, habit history, audit trails, reflections, progress reviews, and personalized routines for each family member.
+
+This matters because people do not just need another to-do list. They need a system that connects daily actions with values, discipline, family goals, and long-term growth. Eventually, we want to integrate frameworks like Atomic Habits, 7 Habits, and AI-assisted coaching to create a complete operating system for intentional and productive living.
+
+============
+Track 1 — Impact
+Prove it with business value.
+
+This is the traditional hackathon impact track. Your project is scored on whether it could create real value in the market.
+
+• The problem is real, and someone is willing to pay (or use it daily).
+• The product is polished enough that the demo itself sells it.
+• The craft, UX, and shipping-ness are visible from minute one.
+
+----------
+We want to build Sadhana OS, a comprehensive personal and family habit operating system that helps individuals turn intentions into consistent daily action.
+
+Most habit trackers are too narrow: they focus only on streaks, fitness, or simple checklists. Real life is broader. We want to support customizable categories and sub-categories across spiritual practice, yoga, exercise, professional growth, family responsibilities, personal discipline, social commitments, learning, and wellbeing.
+
+The system will include habit history, audit trail, progress review, reflections, and personalized routines for each family member based on their needs. Over time, it can integrate proven frameworks such as Atomic Habits, The 7 Habits of Highly Effective People, to-do lists, reminders, and AI-assisted coaching.
