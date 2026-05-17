@@ -521,7 +521,7 @@ button {
 .dashboard-grid,
 .studio-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(430px, 0.34fr);
+  grid-template-columns: minmax(620px, 1fr) minmax(500px, 0.43fr);
   gap: 18px;
   align-items: start;
 }
@@ -530,6 +530,10 @@ button {
 .insight-column {
   display: grid;
   gap: 16px;
+}
+
+.insight-column {
+  align-content: start;
 }
 
 .metric-row {
@@ -627,6 +631,12 @@ button {
 .habit-card.is-selected {
   border-color: #aacbc2;
   box-shadow: 0 0 0 3px rgba(40, 115, 95, 0.1);
+}
+
+@media (min-width: 1500px) {
+  .routine-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .habit-head {
@@ -738,6 +748,13 @@ button {
   padding: 16px;
 }
 
+.side-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(210px, 0.9fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
 .profile-panel {
   display: flex;
   align-items: center;
@@ -747,6 +764,21 @@ button {
     linear-gradient(135deg, rgba(185, 111, 67, 0.3), transparent 42%),
     var(--green-dark);
   border-radius: 8px;
+}
+
+.side-top-grid .profile-panel {
+  min-width: 0;
+}
+
+.side-top-grid .profile-ring {
+  width: 72px;
+  height: 72px;
+}
+
+.next-panel {
+  display: grid;
+  align-content: start;
+  min-width: 0;
 }
 
 .profile-panel p,
@@ -920,7 +952,8 @@ button {
 
 .reflection-panel {
   display: grid;
-  gap: 13px;
+  gap: 14px;
+  padding: 18px;
 }
 
 .reflection-panel .panel-title span {
@@ -933,12 +966,50 @@ button {
 }
 
 .reflection-panel .field-label textarea {
-  min-height: 126px;
+  min-height: 140px;
   line-height: 1.5;
+}
+
+.reflection-panel .reflection-fields textarea {
+  min-height: 58px;
 }
 
 .reflection-panel .field-label input {
   min-height: 42px;
+}
+
+.reflection-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.reflection-fields .wide {
+  grid-column: 1 / -1;
+}
+
+.practice-review-stack {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(240px, 0.82fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.practice-review-stack .smart-panel,
+.rhythm-panel {
+  min-width: 0;
+}
+
+.practice-review-stack .smart-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.practice-review-stack .smart-list div:last-child {
+  grid-column: 1 / -1;
+}
+
+.rhythm-panel .mini-bars {
+  height: 78px;
 }
 
 .journal-layout,
@@ -1178,7 +1249,12 @@ button {
   justify-items: center;
 }
 
+.mini-bar {
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
 .mini-bar span {
+  align-self: end;
   width: 100%;
   min-height: 6px;
   background: linear-gradient(180deg, #28735f, #b96f43);
@@ -1671,8 +1747,11 @@ button {
   .analytics-grid,
   .history-panels,
   .form-grid,
+  .practice-review-stack,
+  .reflection-fields,
   .review-center-metrics,
   .review-tabs,
+  .side-top-grid,
   .smart-editor,
   .member-checks,
   .member-list,

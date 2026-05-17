@@ -1439,6 +1439,22 @@ function TodayView({
           </button>
         </div>
 
+        <div className="practice-review-stack">
+          <HabitDetailPanel
+            habit={selectedHabit}
+            data={data}
+            entry={todayEntries.find((item) => item.habitId === selectedHabit?.id)}
+            onEdit={openHabitEditor}
+            onArchive={archiveHabit}
+            onNote={handleEntryNote}
+          />
+
+          <div className="panel rhythm-panel">
+            <PanelTitle icon={LineChart} title="Seven day rhythm" />
+            <MiniBars data={weeklyTrend} />
+          </div>
+        </div>
+
         <div className="routine-list">
           {!memberHabits.length && (
             <div className="panel empty-panel">
@@ -1538,7 +1554,7 @@ function TodayView({
 
         <ReflectionPanel reflection={reflection} onSave={saveReflection} />
 
-        <div className="panel">
+        <div className="panel next-panel">
           <PanelTitle icon={Sparkles} title="Next best actions" />
           <div className="next-list">
             {nextActions.map((habit) => (
@@ -1549,20 +1565,6 @@ function TodayView({
             ))}
             {!nextActions.length && <p className="empty-state">All visible actions are complete.</p>}
           </div>
-        </div>
-
-        <HabitDetailPanel
-          habit={selectedHabit}
-          data={data}
-          entry={todayEntries.find((item) => item.habitId === selectedHabit?.id)}
-          onEdit={openHabitEditor}
-          onArchive={archiveHabit}
-          onNote={handleEntryNote}
-        />
-
-        <div className="panel">
-          <PanelTitle icon={LineChart} title="Seven day rhythm" />
-          <MiniBars data={weeklyTrend} />
         </div>
       </aside>
     </div>
@@ -2132,30 +2134,35 @@ function ReflectionPanel({ reflection, onSave }) {
           rows={5}
         />
       </label>
-      <label className="field-label">
-        Win
-        <input
-          value={draft.win}
-          onChange={(event) => setDraft({ ...draft, win: event.target.value })}
-          placeholder="What worked"
-        />
-      </label>
-      <label className="field-label">
-        Blocker
-        <input
-          value={draft.blocker}
-          onChange={(event) => setDraft({ ...draft, blocker: event.target.value })}
-          placeholder="What got in the way"
-        />
-      </label>
-      <label className="field-label">
-        Next adjustment
-        <input
-          value={draft.adjustment}
-          onChange={(event) => setDraft({ ...draft, adjustment: event.target.value })}
-          placeholder="What changes tomorrow"
-        />
-      </label>
+      <div className="reflection-fields">
+        <label className="field-label">
+          Win
+          <textarea
+            value={draft.win}
+            onChange={(event) => setDraft({ ...draft, win: event.target.value })}
+            placeholder="What worked"
+            rows={2}
+          />
+        </label>
+        <label className="field-label">
+          Blocker
+          <textarea
+            value={draft.blocker}
+            onChange={(event) => setDraft({ ...draft, blocker: event.target.value })}
+            placeholder="What got in the way"
+            rows={2}
+          />
+        </label>
+        <label className="field-label wide">
+          Next adjustment
+          <textarea
+            value={draft.adjustment}
+            onChange={(event) => setDraft({ ...draft, adjustment: event.target.value })}
+            placeholder="What changes tomorrow"
+            rows={2}
+          />
+        </label>
+      </div>
       <button className="primary-action full" onClick={() => onSave(draft)}>
         <Save size={16} />
         Save review
