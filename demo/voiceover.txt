@@ -1,0 +1,21 @@
+﻿Welcome to Sankalp OS, a premium personal and family life operating system for turning intentions into consistent daily action.
+
+The Daily OS is where the user works each day. Family members have their own routines, and life domains organize practice across yoga, speech, senses, spiritual discipline, physical health, mental growth, society, professional work, and family.
+
+Every habit is grounded in SMART principles. The selected habit shows a SMART card, seven day rhythm, type-aware tracking controls, and space for habit-specific notes.
+
+When a user selects an individual domain, the workspace becomes focused. Global review disappears so the page stays clean and action-oriented for that domain.
+
+Habit Studio is the operating model editor. Users can add domains, add sub-components, create habits, assign family members, choose tracking types, and archive records without losing history.
+
+The create habit flow supports new sub-components, frequency, targets, units, success criteria, and the full SMART definition.
+
+Daily journaling captures the whole day, not just a checklist. The user can record free-flow reflection, wins, blockers, and the next adjustment.
+
+The Review Center is available from All domains. Insights show completion trends, domain balance, habit consistency, and review signals over thirty days, ninety days, one year, five years, or a custom window.
+
+History gives a professional day-by-day record with habit entries, daily journals, notes, archived records, and export options for a visual report or raw data.
+
+Audit makes the system trustworthy. Tracking, edits, archives, restores, and journal saves are preserved as an immutable trail for review.
+
+Sankalp OS is local-first for the demo, polished from minute one, and designed to become a subscription-grade life operating system for individuals and families.
