@@ -4,7 +4,7 @@
 
 Sankalp OS is a hackathon-ready browser app, currently branded in-product as **Sadhana OS by Legacy Loop**, built for people who want more than a streak counter. It helps individuals and families define life domains, design SMART habits, track daily practice, preserve history, review patterns, journal honestly, and maintain an auditable record of change over time.
 
-![Sankalp OS dashboard](./G1.png)
+![Sankalp OS dashboard](./docs/sankalp-os-dashboard.png)
 
 ## Why It Exists
 
@@ -125,7 +125,8 @@ Sankalp-OS/
 |   |-- App.jsx
 |   |-- main.jsx
 |   `-- styles.css
-|-- G1.png
+|-- docs/
+|   `-- sankalp-os-dashboard.png
 `-- README.md
 ```
 

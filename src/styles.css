@@ -365,12 +365,20 @@ button {
 .operating-nav > div {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
+}
+
+.operating-nav .eyebrow {
+  color: var(--green-dark);
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
 }
 
 .operating-nav small {
   color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 650;
 }
 
 .operating-nav.is-compact {
@@ -420,38 +428,46 @@ button {
 
 .review-center {
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
-  gap: 14px;
-  padding: 14px;
+  grid-template-columns: minmax(220px, 0.55fr) minmax(420px, 1.15fr) minmax(300px, 0.8fr);
+  gap: 10px;
+  align-items: stretch;
+  padding: 10px;
   background:
     linear-gradient(135deg, rgba(40, 115, 95, 0.08), transparent 48%),
     var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 12px 34px rgba(30, 51, 46, 0.05);
 }
 
 .review-center-head {
-  display: grid;
-  gap: 12px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
 }
 
 .review-center-head h3 {
-  margin: 2px 0 4px;
-  font-size: 1.2rem;
+  margin: 1px 0 3px;
+  font-size: 1rem;
+  line-height: 1.1;
 }
 
 .review-center-head span,
 .review-tabs small {
   color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .review-center-metrics {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
 }
 
 .review-center-metrics span {
-  padding: 9px 10px;
+  padding: 7px 9px;
   color: var(--muted);
+  font-size: 0.82rem;
   background: var(--surface-soft);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -460,7 +476,7 @@ button {
 .review-center-metrics strong {
   margin-right: 5px;
   color: var(--green-dark);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
 }
 
 .review-tabs {
@@ -473,8 +489,8 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 78px;
-  padding: 12px;
+  min-height: 58px;
+  padding: 10px;
   color: #53615d;
   text-align: left;
   background: var(--surface-soft);
@@ -505,7 +521,7 @@ button {
 .dashboard-grid,
 .studio-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 390px;
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 0.34fr);
   gap: 18px;
   align-items: start;
 }
@@ -904,7 +920,25 @@ button {
 
 .reflection-panel {
   display: grid;
-  gap: 10px;
+  gap: 13px;
+}
+
+.reflection-panel .panel-title span {
+  font-size: 1.06rem;
+}
+
+.reflection-panel .field-label {
+  gap: 8px;
+  font-size: 0.86rem;
+}
+
+.reflection-panel .field-label textarea {
+  min-height: 126px;
+  line-height: 1.5;
+}
+
+.reflection-panel .field-label input {
+  min-height: 42px;
 }
 
 .journal-layout,
@@ -914,7 +948,7 @@ button {
 }
 
 .journal-layout {
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 0.36fr);
   align-items: start;
 }
 

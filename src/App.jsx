@@ -743,8 +743,16 @@ function App() {
     ? `${selectedMember.name}'s ${activeReviewItem?.label.toLowerCase() ?? "review center"}`
     : `${selectedMember.name}'s ${activeOperateItem?.label.toLowerCase() ?? "command center"}`;
   const viewSubtitle = isReviewView
-    ? "Review Center is independent of the domain filter and reads across all habits, journals, archives, and audit history."
+    ? "All-domain review across habits, journals, archives, and audit history."
     : `${selectedCategoryContext?.name ?? "All domains"} operating context for today's practice and habit design.`;
+  const showReviewCenter = selectedCategoryId === "all";
+
+  const chooseCategory = (categoryId) => {
+    setSelectedCategoryId(categoryId);
+    if (categoryId !== "all" && isReviewView) {
+      setActiveView("today");
+    }
+  };
 
   const addAudit = (next, action, target, details, actor = selectedMember.name) => ({
     ...next,
@@ -1143,10 +1151,10 @@ function App() {
             <Layers3 size={16} />
             Operating domains
           </div>
-          <p className="rail-note">Applies to Today and Habit Studio. Review Center always uses all domains.</p>
+          <p className="rail-note">Daily OS follows this filter. Review Center appears on All domains only.</p>
           <button
             className={`category-pill ${selectedCategoryId === "all" ? "is-selected" : ""}`}
-            onClick={() => setSelectedCategoryId("all")}
+            onClick={() => chooseCategory("all")}
           >
             <Target size={16} />
             All domains
@@ -1155,7 +1163,7 @@ function App() {
             <button
               key={category.id}
               className={`category-pill ${selectedCategoryId === category.id ? "is-selected" : ""}`}
-              onClick={() => setSelectedCategoryId(category.id)}
+              onClick={() => chooseCategory(category.id)}
             >
               <CategoryGlyph category={category} />
               {category.name}
@@ -1210,12 +1218,14 @@ function App() {
           </nav>
         </section>
 
-        <ReviewCenterDock
-          activeView={activeView}
-          setActiveView={setActiveView}
-          data={data}
-          selectedMember={selectedMember}
-        />
+        {showReviewCenter && (
+          <ReviewCenterDock
+            activeView={activeView}
+            setActiveView={setActiveView}
+            data={data}
+            selectedMember={selectedMember}
+          />
+        )}
 
         {activeView === "today" && (
           <TodayView
@@ -1336,14 +1346,8 @@ function ReviewCenterDock({ activeView, setActiveView, data, selectedMember }) {
       <div className="review-center-head">
         <div>
           <p className="eyebrow">Review Center</p>
-          <h3>Longitudinal life intelligence</h3>
-          <span>All-domain analytics, history, archive visibility, and audit proof.</span>
-        </div>
-        <div className="review-center-metrics" aria-label="Review center metrics">
-          <span><strong>{activeHabits}</strong> active habits</span>
-          <span><strong>{memberEntries.length}</strong> tracked entries</span>
-          <span><strong>{journalDays}</strong> journal days</span>
-          <span><strong>{archivedRecords}</strong> archived records</span>
+          <h3>Life intelligence</h3>
+          <span>All-domain insights, history, exports, and audit proof.</span>
         </div>
       </div>
       <nav className="review-tabs" aria-label="Review center views">
@@ -1364,6 +1368,12 @@ function ReviewCenterDock({ activeView, setActiveView, data, selectedMember }) {
           );
         })}
       </nav>
+        <div className="review-center-metrics" aria-label="Review center metrics">
+          <span><strong>{activeHabits}</strong> active habits</span>
+          <span><strong>{memberEntries.length}</strong> tracked entries</span>
+          <span><strong>{journalDays}</strong> journal days</span>
+          <span><strong>{archivedRecords}</strong> archived records</span>
+        </div>
     </section>
   );
 }
